@@ -1,0 +1,39 @@
+Description of physical setup:		
+The data comes from a continuous flow process.		
+Sample rate is 1 Hz.		
+In the first stage, Machines 1, 2,  and 3 operate in parallel, and feed their outputs into a step that combines the flows.		
+Output from the combiner is measured in 15 locations. These measurements are the primary measurements to predict.		
+Next, the output flows into a second stage, where Machines 4 and 5 process in series.		
+Measurements are made again in the same 15 locations. These are the secondary measurements to predict.		
+		
+Measurements are noisy.		
+Each measurement also has a target or Setpoint (setpoints are included in the first row of data).		
+The goal is to predict the measurements (or the error versus setpoints) for as many of the 15 measurements as possible.		
+Some measurements will be more predictable than others!		
+Prediction of measurements after the first stage are the primary interest.		
+Prediction of measurements after the second stage are nice-to-have but the data is much more noisy.		
+		
+Note on variable naming conventions		
+~.C.Setpoint		Setpoint for Controlled variable
+~.C.Actual		Actual value of Controlled variable
+~.U.Actual		Actual value of Uncontrolled variable
+Others		Environmental or raw material variables, States / events, etc.
+		
+Start col	End col	Description
+0	0	Time stamp
+1	2	Factory ambient conditions
+3	6	First stage, Machine 1, raw material properties (material going in to Machine 1)
+7	14	First stage, Machine 1 process variables
+15	18	First stage, Machine 2, raw material properties (material going in to Machine 2)
+19	26	First stage, Machine 2 process variables
+27	30	First stage, Machine 3, raw material properties (material going in to Machine 3)
+31	38	First stage, Machine 3 process variables
+39	41	Combiner stage process parameters. Here we combines the outputs from Machines 1, 2, and 3.
+42	71	PRIMARY OUTPUT TO CONTROL: Measurements of 15 features (in mm), along with setpoint or target for each
+72	78	Second stage, Machine 4 process variables
+79	85	Second stage, Machine 5 process variables
+86	115	SECONDARY OUTPUT TO CONTROL: Measurements of 15 features (in mm), along with setpoint or target for each
+		
+		
+		
+		
