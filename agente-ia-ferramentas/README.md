@@ -1,0 +1,1 @@
+Script para rodar um agente de IA que usa ferramentas criado no vídeo https://youtu.be/RT4WYDq2ZkU
